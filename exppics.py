@@ -16,14 +16,18 @@ preamblestr = (
     '\n\\newlength\\figurewidth'
     )
 
-for figname, figsize in tikxdict.items():
+for figname, figinfo in tikxdict.items():
     curstring = (
-        '\n\\setlength\\figureheight{{{0}}}'.format(figsize['fh']) +
-        '\n\\setlength\\figurewidth{{{0}}}'.format(figsize['fw']) +
+        '\n\\setlength\\figureheight{{{0}}}'.format(figinfo['fh']) +
+        '\n\\setlength\\figurewidth{{{0}}}'.format(figinfo['fw']) +
         '\n\\pgfplotsset{footnotesize}' +
         '\n{{\\input{{{0}}}}}'.format(figname) +
         '\n\\end{document}'
         )
+    try:
+        curstring = figinfo['stradd'] + curstring
+    except KeyError:
+        pass
     tmptexfile = open('exptikz.tex', 'w')
     tmptexfile.write(preamblestr + curstring)
     tmptexfile.close()
