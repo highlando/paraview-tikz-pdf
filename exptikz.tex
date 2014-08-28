@@ -1,0 +1,13 @@
+\documentclass[tikz]{standalone}
+%\usetikzlibrary{ tikz package already loaded by "tikz" option
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\begin{document}
+\newlength\figureheight
+\newlength\figurewidth
+\setlength\figureheight{5cm}
+\setlength\figurewidth{5cm}
+\pgfplotsset{footnotesize}
+{\input{domainaxis.tikz}}
+\end{document}

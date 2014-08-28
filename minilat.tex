@@ -1,0 +1,35 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[figtopcap]{subfigure}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+%opening
+\title{}
+\author{Jan Heiland}
+
+\begin{document}
+
+\begin{figure}
+	\newlength\figureheight
+	\newlength\figurewidth
+	\setlength\figureheight{8.5cm}
+	\setlength\figurewidth{2cm}
+	\input{colorbar.tikz}
+\end{figure}
+
+\begin{figure}
+	\newlength\figureheight
+	\newlength\figurewidth
+	\setlength\figureheight{8.5cm}
+	\setlength\figurewidth{8.5cm}
+	\input{domainaxis.tikz}
+\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{}
+\end{document}
+
