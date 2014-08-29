@@ -24,10 +24,6 @@ for figname, figinfo in tikxdict.items():
         '\n{{\\input{{{0}}}}}'.format(figname) +
         '\n\\end{document}'
         )
-    try:
-        curstring = figinfo['stradd'] + curstring
-    except KeyError:
-        pass
     tmptexfile = open('exptikz.tex', 'w')
     tmptexfile.write(preamblestr + curstring)
     tmptexfile.close()
