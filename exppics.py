@@ -2,8 +2,7 @@ import os
 
 tikxdict = {'colorbar.tikz': dict(fh='5cm', fw='2cm'),
             'domainaxis.tikz': dict(fh='5cm', fw='5cm')}
-
-outnamelist = ["colorbar.pdf", "domainaxis.pdf"]
+defstex = 'def'  # add a .tex file with definitions or modify def.tex
 
 preamblestr = (
     '\\documentclass[tikz]{standalone}' +
@@ -12,6 +11,7 @@ preamblestr = (
     '\n\\pgfplotsset{compat=newest}' +
     '\n\\pgfplotsset{plot coordinates/math parser=false}' +
     '\n\\begin{document}' +
+    '\n\\input{' + defstex + '}' +
     '\n\\newlength\\figureheight' +
     '\n\\newlength\\figurewidth'
     )
@@ -34,4 +34,4 @@ for figname, figinfo in tikxdict.items():
 
     # os.system("cp " + tikxlist[indx] + " pgfpictoexp.tex")
     os.system("pdflatex -interaction=nonstopmode exptikz.tex")
-    os.system("mv exptikz.pdf " + figname+'.pdf')
+    os.system("mv exptikz.pdf " + figname + '.pdf')

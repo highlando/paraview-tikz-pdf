@@ -1,0 +1,121 @@
+% This file was created by matplotlib v0.1.0.
+% Copyright (c) 2010--2014, Nico Schlömer <nico.schloemer@gmail.com>
+% All rights reserved.
+% 
+% The lastest updates can be retrieved from
+% 
+% https://github.com/nschloe/matplotlib2tikz
+% 
+% where you can also submit bug reports and leavecomments.
+% 
+\begin{tikzpicture}
+
+\definecolor{color1}{rgb}{0.501960784313725,0.498039215686275,1}
+\definecolor{color0}{rgb}{0.250980392156863,0.749019607843137,1}
+\definecolor{color2}{rgb}{0.752941176470588,0.247058823529412,1}
+
+\begin{semilogyaxis}[
+legend pos=outer north east,
+legend columns = 1,
+xlabel={\poddim},
+ylabel={\apprxerr{\nsnap}{\poddim}},
+xmin=0, xmax=35,
+ymin=1e-05, ymax=0.1,
+width=\figurewidth,
+height=\figureheight,
+xmajorgrids,
+ymajorgrids,
+legend entries={{\pod},{\genpod},{$\nsnap=17$},{$\nsnap=33$},{$\nsnap=65$}}
+]
+
+%% pod genpod k=17
+
+\addplot [very thick, color2]
+coordinates {
+(4,0.0509067628444387)
+(8,0.0143239056377921)
+(16,0.00780004163821141)
+};
+
+\addplot [very thick, color0]
+coordinates {
+(4,0.0475019863420531)
+(8,0.0124025440241383)
+(16,0.00284748572803308)
+};
+
+%%% all markers for k = 17, 33, 65
+\addplot [line width=0.7000000000000001pt, color1, mark=triangle*, mark size=2, only marks]
+coordinates {
+(4,0.0509067628444387)
+(8,0.0143239056377921)
+(16,0.00780004163821141)
+(4,0.0475019863420531)
+(8,0.0124025440241383)
+(16,0.00284748572803308)
+};
+\addplot [line width=0.7000000000000001pt, color1, mark=*, mark size=2, only marks]
+coordinates {
+(4,0.048690375118568)
+(8,0.012821313266992)
+(16,0.00173767421618053)
+(32,0.0014445259608825)
+(4,0.0475273034655907)
+(8,0.012264004643197)
+(16,0.000998858942622534)
+(32,0.000386988763761537)
+};
+\addplot [line width=0.7000000000000001pt, color1, mark=square*, mark size=2, only marks]
+coordinates {
+(4,0.0479678142816447)
+(8,0.0124827418892039)
+(16,0.00103642990978779)
+(32,0.000142791930587667)
+(4,0.0475394313540485)
+(8,0.0122473241221742)
+(16,0.000982983218991998)
+(32,6.10366871255678e-05)
+};
+
+%%% pod genpod k=33
+\addplot [very thick, color2]
+coordinates {
+(4,0.048690375118568)
+(8,0.012821313266992)
+(16,0.00173767421618053)
+(32,0.0014445259608825)
+};
+
+\addplot [very thick, color0]
+coordinates {
+(4,0.0475273034655907)
+(8,0.012264004643197)
+(16,0.000998858942622534)
+(32,0.000386988763761537)
+};
+%%% pod genpod k=65
+\addplot [very thick, color2]
+coordinates {
+(4,0.0479678142816447)
+(8,0.0124827418892039)
+(16,0.00103642990978779)
+(32,0.000142791930587667)
+};
+\addplot [very thick, color0]
+coordinates {
+(4,0.0475394313540485)
+(8,0.0122473241221742)
+(16,0.000982983218991998)
+(32,6.10366871255678e-05)
+};
+\path [draw=white!80.0!black, fill opacity=0] (axis cs:13,1)--(axis cs:13,1);
+
+\path [draw=white!80.0!black, fill opacity=0] (axis cs:1,13)--(axis cs:1,13);
+
+\path [draw=white!80.0!black, fill opacity=0] (axis cs:13,0)--(axis cs:13,0);
+
+\path [draw=white!80.0!black, fill opacity=0] (axis cs:0,13)--(axis cs:0,13);
+
+\end{semilogyaxis}
+
+\end{tikzpicture}
